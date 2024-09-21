@@ -60,4 +60,4 @@ jobs:
     steps:
       # Step 1: Make an HTTP request to the website to ensure it’s live
       - name: test
-        run: curl -I https://arthurfonda.com/ | grep "200 OK"
+        run: curl -I http://arthurfonda.com.s3-website.eu-central-1.amazonaws.com/ | grep "200 OK"
