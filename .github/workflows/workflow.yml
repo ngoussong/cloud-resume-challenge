@@ -63,7 +63,7 @@ jobs:
       - name: Deploy to S3
         run: |
           echo "Deploying files to S3..."
-          aws s3 sync dist/andresjosehr-portfolio/ s3://arthurfonda.com --delete
+          aws s3 sync ./dist/andresjosehr-portfolio/ s3://arthurfonda.com --delete
           aws s3 cp s3://arthurfonda.com/index.html s3://arthurfonda.com/index.html --cache-control "no-cache"
           echo "Deployment complete."
   test:
