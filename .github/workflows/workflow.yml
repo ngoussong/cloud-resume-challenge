@@ -56,10 +56,14 @@ jobs:
           role-to-assume: arn:aws:iam::014498624754:role/GithubOIDCRole
           aws-region: 'eu-central-1'
       # Step 3: Deploy to S3
+      - name: List S3 Bucket (Before Sync)
+        run: aws s3 ls s3://arthurfonda.com/ --recursive
       - name: Deploy to S3
         run: |
+          echo "Deploying files to S3..."
           aws s3 sync dist/andresjosehr-portfolio/ s3://arthurfonda.com --delete
           aws s3 cp s3://arthurfonda.com/index.html s3://arthurfonda.com/index.html --cache-control "no-cache"
+          echo "Deployment complete."
   test:
     runs-on: ubuntu-latest
     needs: deploy
