@@ -61,7 +61,7 @@ jobs:
           echo "Invalidating CloudFront cache..."
           aws cloudfront create-invalidation \
             --distribution-id EPD0U1ZP2WFP3 \
-            --paths "*"  
+            --paths "/*"  
       - name: Deploy to S3
         run: |
           echo "Deploying files to S3..."
