@@ -31,7 +31,7 @@ jobs:
       - name: Clean build directory
         run: rm -rf dist && mkdir dist
       - name: Build Angular app
-        run: npm run build -- --prod --verbose
+        run: npm run build -- --configuration production --verbose
       - name: List build directory contents
         run: ls -la dist/andresjosehr-portfolio
       - name: Check build logs
