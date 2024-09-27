@@ -28,10 +28,8 @@ jobs:
       #- name: Run tests
       #  run: npm run test  
       # Step 5: Build the Angular project
-      - name: Clean build directory
-        run: rm -rf dist && mkdir dist
       - name: Build Angular app
-        run: npm run build --verbose
+        run: npm run build:prod
       - name: List build directory contents
         run: ls -la dist/andresjosehr-portfolio  
       # Step 6: Upload build artifacts (optional, for debugging)
@@ -56,12 +54,12 @@ jobs:
       # Step 3: Deploy to S3
       - name: List S3 Bucket (Before Sync)
         run: aws s3 ls s3://arthurfonda.com/ --recursive
-      - name: Invalidate CloudFront Cache
-        run: |
-          echo "Invalidating CloudFront cache..."
-          aws cloudfront create-invalidation \
-            --distribution-id EPD0U1ZP2WFP3 \
-            --paths "/*"  
+      # - name: Invalidate CloudFront Cache
+      #   run: |
+      #     echo "Invalidating CloudFront cache..."
+      #     aws cloudfront create-invalidation \
+      #       --distribution-id EPD0U1ZP2WFP3 \
+      #       --paths "/*"  
       - name: Deploy to S3
         run: |
           echo "Deploying files to S3..."
