@@ -23,25 +23,16 @@ jobs:
           node-version: '18.x'
       # Step 3: Install dependencies
       - name: Install dependencies
-        run: npm install
-      # Step 4: Run tests
-      #- name: Run tests
-      #  run: npm run test  
-      # Step 5: Build the Angular project
-      - name: Clean build directory
-        run: rm -rf dist && mkdir dist
+        run: npm install  
+      # Step 4: Build the Angular project
       - name: Build Angular app
-        run: | 
-          npm run build > build-log.txt
-          cat build-log.txt
-      - name: List build directory contents
-        run: ls -la   
-      # Step 6: Upload build artifacts (optional, for debugging)
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: build-artifacts
-          path: dist/andresjosehr-portfolio
+        run: npm run build  
+      # Step 5: Upload build artifacts (optional, for debugging)
+      # - name: Upload build artifacts
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: build-artifacts
+      #     path: dist/andresjosehr-portfolio
   deploy:
     runs-on: ubuntu-latest
     needs: build
