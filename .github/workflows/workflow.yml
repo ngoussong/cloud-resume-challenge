@@ -35,7 +35,7 @@ jobs:
           npm run build > build-log.txt
           cat build-log.txt
       - name: List build directory contents
-        run: ls -la dist/andresjosehr-portfolio  
+        run: ls -la   
       # Step 6: Upload build artifacts (optional, for debugging)
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
