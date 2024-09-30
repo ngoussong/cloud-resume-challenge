@@ -31,7 +31,9 @@ jobs:
       - name: Clean build directory
         run: rm -rf dist && mkdir dist
       - name: Build Angular app
-        run: npm run build-portfolio
+        run: | 
+          npm run build > build-log.txt
+          cat build-log.txt
       - name: List build directory contents
         run: ls -la dist/andresjosehr-portfolio  
       # Step 6: Upload build artifacts (optional, for debugging)
@@ -60,7 +62,7 @@ jobs:
           name: build-artifacts
 
       - name: List Downloaded Artifacts
-        run: ls -la dist/ # Verify that artifacts are correctly downloaded    
+        run: ls -la  # Verify that artifacts are correctly downloaded    
       # Step 3: Deploy to S3
       - name: List S3 Bucket (Before Sync)
         run: aws s3 ls s3://arthurfonda.com/ --recursive
