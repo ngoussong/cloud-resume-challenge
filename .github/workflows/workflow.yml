@@ -31,7 +31,7 @@ jobs:
       - name: Clean build directory
         run: rm -rf dist && mkdir dist
       - name: Build Angular app
-        run: npm run build-portfolio
+        run: npm run build --verbose
       - name: List build directory contents
         run: ls -la dist/  
       # Step 6: Upload build artifacts (optional, for debugging)
