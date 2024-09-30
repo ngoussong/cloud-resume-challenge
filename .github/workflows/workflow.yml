@@ -33,7 +33,7 @@ jobs:
       - name: Build Angular app
         run: npm run build --verbose
       - name: List build directory contents
-        run: ls -la dist/  
+        run: ls -la dist/andresjosehr-portfolio  
       # Step 6: Upload build artifacts (optional, for debugging)
       # - name: Upload build artifacts
       #   uses: actions/upload-artifact@v3
