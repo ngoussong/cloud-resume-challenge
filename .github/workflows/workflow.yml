@@ -33,7 +33,7 @@ jobs:
       - name: Build Angular app
         run: npm run build-portfolio
       - name: List build directory contents
-        run: ls -la dist/andresjosehr-portfolio  
+        run: ls -la dist/  
       # Step 6: Upload build artifacts (optional, for debugging)
       # - name: Upload build artifacts
       #   uses: actions/upload-artifact@v3
@@ -56,12 +56,12 @@ jobs:
       # Step 3: Deploy to S3
       - name: List S3 Bucket (Before Sync)
         run: aws s3 ls s3://arthurfonda.com/ --recursive
-      - name: Invalidate CloudFront Cache
-        run: |
-          echo "Invalidating CloudFront cache..."
-          aws cloudfront create-invalidation \
-            --distribution-id EPD0U1ZP2WFP3 \
-            --paths "/*"  
+      # - name: Invalidate CloudFront Cache
+      #   run: |
+      #     echo "Invalidating CloudFront cache..."
+      #     aws cloudfront create-invalidation \
+      #       --distribution-id EPD0U1ZP2WFP3 \
+      #       --paths "/*"  
       - name: Deploy to S3
         run: |
           echo "Deploying files to S3..."
