@@ -48,8 +48,6 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build-artifacts
-      - name: List Downloaded Artifacts
-        run: ls -la /home/runner/work/cloud-resume-challenge/cloud-resume-challenge # Verify that artifacts are correctly downloaded    
       # Step 3: Deploy to S3
       - name: List S3 Bucket (Before Sync)
         run: aws s3 ls s3://arthurfonda.com/ --recursive 
