@@ -26,8 +26,11 @@ jobs:
         run: npm install  
       # Step 4: Build the Angular project
       - name: Build Angular app
-        run: npm run build  
-      # Step 5: Upload build artifacts (optional, for debugging)
+        run: npm run build
+      # Step 5: Test the Angular project
+      - name: Test Angular app
+        run: npm run test    
+      # Step 6: Upload build artifacts (optional, for debugging)
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
         with:
@@ -63,4 +66,4 @@ jobs:
     steps:
       # Step 1: Make an HTTP request to the website to ensure it’s live
       - name: test
-        run: npm run test #curl -I http://arthurfonda.com.s3-website.eu-central-1.amazonaws.com/ | grep "200 OK"
+        run: curl -I http://arthurfonda.com.s3-website.eu-central-1.amazonaws.com/ | grep "200 OK"
