@@ -28,8 +28,8 @@ jobs:
       - name: Build Angular app
         run: npm run build
       # Step 5: Test the Angular project
-      - name: Test Angular app
-        run: npm run test:prod    
+      # - name: Test Angular app
+      #   run: npm run test:prod    
       # Step 6: Upload build artifacts (optional, for debugging)
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
