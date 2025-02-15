@@ -1,4 +1,5 @@
 # How I Tackled the Cloud Resume Challenge Step by Step
+![alt text](images/architecture.gif)
 
 # Introduction
 The Cloud Resume Challenge is a comprehensive project designed to help individuals develop hands-on experience with cloud technologies by building and deploying a resume website using AWS services. This challenge integrates various key concepts, including Infrastructure-as-Code (IaC), CI/CD pipelines, security best practices, and cloud monitoring.
